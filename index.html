@@ -1,0 +1,491 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para Noelia ♡</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --wine: #160810;
+  --wine2: #321322;
+  --gold: #d9bd86;
+  --pink: #e9b6c4;
+  --cream: #f8eee8;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--cream);
+  background:
+    radial-gradient(ellipse at 50% 0%, #54243a 0%, transparent 55%),
+    linear-gradient(145deg, #10070d, #29101c 55%, #10070d);
+  font-family: 'Montserrat', sans-serif;
+  overflow-x: hidden;
+}
+
+#stars {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+main {
+  position: relative;
+  z-index: 2;
+  width: min(100% - 30px, 760px);
+  margin: auto;
+  padding: 35px 0 80px;
+}
+
+.center { text-align: center; }
+
+.eyebrow {
+  color: var(--gold);
+  letter-spacing: 5px;
+  font-size: 10px;
+  text-transform: uppercase;
+}
+
+.script {
+  font-family: 'Great Vibes', cursive;
+  color: var(--pink);
+  font-weight: 400;
+}
+
+h1, h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+}
+
+h1 {
+  font-size: clamp(55px, 13vw, 100px);
+  margin: 12px 0;
+  line-height: 1.05;
+}
+
+h2 {
+  font-size: clamp(35px, 8vw, 55px);
+  margin: 12px 0;
+}
+
+p {
+  font-size: 13px;
+  line-height: 2;
+  color: #e7d5d7;
+  font-weight: 300;
+}
+
+button {
+  font-family: 'Montserrat', sans-serif;
+  cursor: pointer;
+  transition: .3s ease;
+}
+
+button:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 5px;
+}
+
+.hero {
+  min-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  animation: appear 1.8s ease both;
+}
+
+.ornament {
+  color: var(--gold);
+  letter-spacing: 9px;
+  font-size: 17px;
+  margin: 20px 0;
+}
+
+.hero-sub {
+  max-width: 420px;
+  margin: 12px auto 30px;
+  letter-spacing: 2px;
+  font-size: 11px;
+  text-transform: uppercase;
+  color: #d8c2c3;
+}
+
+.primary {
+  border: 1px solid var(--gold);
+  background: linear-gradient(120deg, #d6b77e, #f1d9ae);
+  color: #29121b;
+  padding: 15px 28px;
+  border-radius: 2px;
+  letter-spacing: 2px;
+  font-size: 10px;
+  text-transform: uppercase;
+  box-shadow: 0 0 30px #d9bd8625;
+}
+
+.primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 35px #d9bd8650;
+}
+
+.music {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 18px;
+  color: var(--gold);
+  background: #ffffff08;
+  border: 1px solid #d9bd8660;
+  border-radius: 30px;
+  font-size: 10px;
+  letter-spacing: 1px;
+  margin: 0 auto 35px;
+}
+
+.music:hover { background: #ffffff15; }
+
+.section {
+  margin: 55px 0;
+  text-align: center;
+  animation: appear 1.2s ease both;
+}
+
+.line {
+  width: 65px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  margin: 25px auto;
+}
+
+.letter {
+  position: relative;
+  padding: clamp(25px, 7vw, 55px);
+  background: linear-gradient(145deg, #ffffff0b, #ffffff03);
+  border: 1px solid #d9bd8640;
+  box-shadow: 0 20px 80px #00000035;
+  backdrop-filter: blur(8px);
+}
+
+.letter::before, .letter::after {
+  content: "✦";
+  color: var(--gold);
+  position: absolute;
+  font-size: 15px;
+}
+
+.letter::before { top: 15px; left: 18px; }
+.letter::after { bottom: 15px; right: 18px; }
+
+.letter p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(18px, 4vw, 22px);
+  line-height: 1.8;
+  color: #f0e1dc;
+}
+
+.letter .greeting {
+  font-family: 'Great Vibes', cursive;
+  font-size: 39px;
+  color: var(--pink);
+  margin-bottom: 25px;
+}
+
+.highlight { color: var(--gold); }
+
+.flower {
+  font-size: 35px;
+  color: var(--pink);
+  opacity: .85;
+  margin: 20px 0;
+}
+
+.question {
+  padding: 65px 15px 45px;
+  text-align: center;
+  border-top: 1px solid #d9bd8630;
+  border-bottom: 1px solid #d9bd8630;
+}
+
+.question h2 {
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(48px, 11vw, 75px);
+  color: var(--pink);
+}
+
+.question p {
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 10px;
+}
+
+.answers {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.yes {
+  background: linear-gradient(120deg, #d9bd86, #f2d9ae);
+  color: #25111a;
+  border: none;
+  padding: 16px 35px;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border-radius: 3px;
+}
+
+.no {
+  background: transparent;
+  border: 1px solid #ffffff55;
+  color: #e8d6d9;
+  padding: 16px 28px;
+  font-size: 11px;
+  border-radius: 3px;
+}
+
+.yes:hover, .no:hover { transform: translateY(-3px); }
+
+#response {
+  display: none;
+  margin-top: 35px;
+  animation: appear 1s ease both;
+}
+
+#response h2 {
+  font-family: 'Great Vibes', cursive;
+  color: var(--pink);
+  font-size: 55px;
+}
+
+footer {
+  text-align: center;
+  padding: 50px 10px 15px;
+  color: #b99da7;
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+
+.heart {
+  position: fixed;
+  bottom: -30px;
+  z-index: 1;
+  color: #e9a9b9;
+  pointer-events: none;
+  animation: floatUp linear forwards;
+  opacity: .65;
+}
+
+@keyframes floatUp {
+  to { transform: translateY(-110vh) rotate(35deg); opacity: 0; }
+}
+
+@keyframes appear {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 500px) {
+  main { width: min(100% - 24px, 760px); }
+  .hero { min-height: 78vh; }
+  .letter { padding: 35px 23px; }
+}
+</style>
+</head>
+
+<body>
+<canvas id="stars"></canvas>
+
+<main>
+  <section class="hero">
+    <div class="eyebrow">Una pequeña sorpresa para alguien especial</div>
+    <div class="ornament">✦ ───── ♡ ───── ✦</div>
+    <div class="script" style="font-size:38px">Para ti,</div>
+    <h1>Noelia</h1>
+    <div class="hero-sub">Hay algo que llevo tiempo queriendo decirte...</div>
+    <button class="primary" id="start">Descubrir mi mensaje</button>
+    <div class="ornament">♡</div>
+  </section>
+
+  <section class="section" id="story">
+    <div class="eyebrow">Antes de continuar</div>
+    <h2>Un momento para nosotros</h2>
+    <div class="line"></div>
+    <p>
+      No he creado esta página por casualidad.
+      Quería encontrar una forma diferente de decirte
+      algo que para mí significa muchísimo.
+    </p>
+    <div class="flower">✿</div>
+  </section>
+
+  <section class="section">
+    <button class="music" id="musicButton">
+      ♫ <span id="musicLabel">La canción de este momento</span>
+    </button>
+    <div class="letter">
+      <div class="greeting">Querida Noelia...</div>
+      <p>
+        No sé exactamente cómo empezar, porque a veces
+        las palabras se quedan pequeñas cuando intentas
+        explicar lo que sientes.
+      </p>
+      <p>
+        Pero quería que supieras que me hace mucha ilusión
+        conocerte, compartir momentos contigo y descubrir
+        poco a poco todo lo que te hace ser tú.
+      </p>
+      <p>
+        No quiero prometerte una historia perfecta,
+        porque sé que ninguna lo es. Quiero ofrecerte
+        algo mucho más sincero: cariño, respeto,
+        confianza, detalles y ganas de construir algo bonito.
+      </p>
+      <p>
+        Quiero poder reír contigo, escucharte cuando
+        necesites hablar, apoyarte en tus días difíciles
+        y celebrar contigo los buenos.
+      </p>
+      <p>
+        Noelia, no sé qué nos traerá el futuro,
+        pero sí sé que me gustaría descubrirlo a tu lado.
+      </p>
+      <div class="line"></div>
+      <p class="script highlight" style="font-size:35px">
+        Y ahora quiero preguntarte algo...
+      </p>
+    </div>
+  </section>
+
+  <section class="question">
+    <div class="eyebrow">La pregunta más importante</div>
+    <h2>Noelia...</h2>
+    <p>¿Me harías el honor de comenzar esta historia conmigo?</p>
+    <h2 style="font-family:'Cormorant Garamond';font-size:clamp(32px,8vw,48px)">
+      ¿Quieres ser mi novia?
+    </h2>
+
+    <div class="answers" id="answers">
+      <button class="yes" id="yesButton">Sí, quiero ♡</button>
+      <button class="no" id="noButton">Necesito pensarlo</button>
+    </div>
+
+    <div id="response">
+      <div class="flower">♡ ✦ ♡</div>
+      <h2>¡Qué felicidad!</h2>
+      <p>
+        Gracias por darme la oportunidad de vivir
+        esta historia contigo. Quiero que sea algo
+        bonito, sincero y lleno de buenos momentos.
+      </p>
+      <div class="script" style="font-size:38px">Esto es solo el comienzo...</div>
+    </div>
+  </section>
+
+  <footer>
+    HECHO CON CARIÑO, ESPECIALMENTE PARA NOELIA
+    <div class="ornament">✦ ♡ ✦</div>
+  </footer>
+</main>
+
+<script>
+(() => {
+  const start = document.getElementById('start');
+  const yes = document.getElementById('yesButton');
+  const no = document.getElementById('noButton');
+  const response = document.getElementById('response');
+  const musicButton = document.getElementById('musicButton');
+  const musicLabel = document.getElementById('musicLabel');
+
+  start.addEventListener('click', () => {
+    document.getElementById('story').scrollIntoView({ behavior: 'smooth' });
+  });
+
+  yes.addEventListener('click', () => {
+    response.style.display = 'block';
+    document.getElementById('answers').style.display = 'none';
+    response.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    for (let i = 0; i < 24; i++) createHeart();
+  });
+
+  no.addEventListener('click', () => {
+    no.textContent = 'Tómate tu tiempo ♡';
+    no.style.borderColor = '#d9bd86';
+  });
+
+  // Añadiremos aquí la canción que elijas.
+  musicButton.addEventListener('click', () => {
+    musicLabel.textContent = 'Pronto sonará nuestra canción ♡';
+  });
+
+  function createHeart() {
+    const heart = document.createElement('div');
+    heart.className = 'heart';
+    heart.textContent = ['♡', '♥', '✧'][Math.floor(Math.random() * 3)];
+    heart.style.left = Math.random() * 100 + 'vw';
+    heart.style.fontSize = (14 + Math.random() * 22) + 'px';
+    heart.style.animationDuration = (4 + Math.random() * 5) + 's';
+    document.body.appendChild(heart);
+    setTimeout(() => heart.remove(), 9500);
+  }
+
+  setInterval(() => {
+    if (Math.random() > .45) createHeart();
+  }, 1600);
+
+  // Fondo de estrellas animadas.
+  const canvas = document.getElementById('stars');
+  const ctx = canvas.getContext('2d');
+  let stars = [];
+
+  function resize() {
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    canvas.width = window.innerWidth * dpr;
+    canvas.height = window.innerHeight * dpr;
+    canvas.style.width = window.innerWidth + 'px';
+    canvas.style.height = window.innerHeight + 'px';
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+    stars = Array.from({ length: 95 }, () => ({
+      x: Math.random() * window.innerWidth,
+      y: Math.random() * window.innerHeight,
+      r: Math.random() * 1.5 + .3,
+      a: Math.random(),
+      speed: Math.random() * .012 + .003
+    }));
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
+    stars.forEach(s => {
+      s.a += s.speed;
+      const opacity = .25 + (Math.sin(s.a) + 1) * .3;
+      ctx.beginPath();
+      ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(245,220,190,${opacity})`;
+      ctx.fill();
+    });
+    requestAnimationFrame(draw);
+  }
+
+  window.addEventListener('resize', resize);
+  resize();
+  draw();
+})();
+</script>
+</body>
+</html>
