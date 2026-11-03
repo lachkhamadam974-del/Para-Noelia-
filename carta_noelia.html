@@ -1,289 +1,707 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#180b16">
-  <meta name="description" content="Una carta especial para Noelia.">
-  <title>Para Noelia ♡</title>
+  <meta name="theme-color" content="#170d19">
+  <title>Una pregunta para Noelia ♡</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
   <style>
     :root {
-      --night: #180b16;
-      --wine: #3b142b;
-      --wine-light: #57213d;
-      --cream: #f8efe6;
-      --ink: #37202e;
-      --gold: #d8b779;
-      --pink: #d99baa;
-      --muted: #d8c4cf;
+      --bg: #170d19;
+      --wine: #35172c;
+      --wine2: #54243e;
+      --gold: #d9bd83;
+      --rose: #dba9b7;
+      --cream: #fff7ef;
+      --ink: #432c3a;
     }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: auto; }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
       color: var(--cream);
-      font-family: 'Montserrat', sans-serif;
       background:
-        radial-gradient(ellipse at 15% 8%, rgba(133, 55, 91, .28), transparent 34%),
-        radial-gradient(ellipse at 90% 45%, rgba(106, 45, 77, .22), transparent 32%),
-        linear-gradient(155deg, #100810 0%, #241020 46%, #160a16 100%);
+        radial-gradient(ellipse at 50% 0%, #49243d 0%, transparent 42%),
+        linear-gradient(155deg, #100912, #241321 55%, #100912);
+      font-family: 'Montserrat', sans-serif;
       overflow-x: hidden;
     }
+
     body::before {
-      content: '';
+      content: "";
       position: fixed;
       inset: 0;
+      z-index: -1;
       pointer-events: none;
-      opacity: .35;
-      background-image: radial-gradient(1px 1px at 12% 19%, #fff 98%, transparent),
-        radial-gradient(1px 1px at 78% 12%, #f1d8a6 98%, transparent),
-        radial-gradient(1px 1px at 65% 72%, #fff 98%, transparent),
-        radial-gradient(1px 1px at 23% 83%, #f1d8a6 98%, transparent),
-        radial-gradient(1px 1px at 91% 58%, #fff 98%, transparent),
-        radial-gradient(1px 1px at 43% 39%, #fff 98%, transparent);
-      background-size: 340px 310px;
-      z-index: 0;
+      opacity: .42;
+      background-image:
+        radial-gradient(1px 1px at 10% 20%, #fff 99%, transparent),
+        radial-gradient(2px 2px at 80% 30%, #e7c994 99%, transparent),
+        radial-gradient(1px 1px at 40% 70%, #fff 99%, transparent),
+        radial-gradient(2px 2px at 90% 85%, #e7c994 99%, transparent),
+        radial-gradient(1px 1px at 20% 90%, #fff 99%, transparent);
+      background-size: 280px 280px;
     }
-    a { color: inherit; }
-    button { font: inherit; }
-    .page { position: relative; z-index: 1; }
-    .topbar {
-      width: min(1120px, calc(100% - 40px));
-      margin: 0 auto;
+
+    button, a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .page {
+      width: 100%;
+      position: relative;
+    }
+
+    .header {
+      width: min(1100px, calc(100% - 40px));
+      margin: auto;
       padding: 25px 0;
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      gap: 18px;
-      border-bottom: 1px solid rgba(216, 183, 121, .2);
+      align-items: center;
+      border-bottom: 1px solid rgba(217,189,131,.2);
     }
-    .brand { color: var(--gold); font-family: 'Cormorant Garamond', serif; font-size: 23px; letter-spacing: 3px; }
-    .top-note { color: #d9c5d0; font-size: 10px; letter-spacing: 3px; text-transform: uppercase; text-align: right; }
+
+    .logo {
+      font-family: 'Cormorant Garamond', serif;
+      color: var(--gold);
+      letter-spacing: 4px;
+      font-size: 23px;
+    }
+
+    .header-note {
+      font-size: 9px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #cdb9c5;
+      text-align: right;
+    }
+
     .hero {
-      width: min(1000px, calc(100% - 36px));
-      margin: 0 auto;
-      min-height: 590px;
-      padding: 90px 0 75px;
+      min-height: 690px;
+      padding: 100px 20px 95px;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       text-align: center;
     }
-    .eyebrow { color: var(--gold); text-transform: uppercase; letter-spacing: 5px; font-size: 10px; line-height: 1.8; }
-    h1 {
-      margin: 24px 0 12px;
-      color: var(--cream);
+
+    .overline {
+      color: var(--gold);
+      font-size: 10px;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
       font-family: 'Great Vibes', cursive;
-      font-size: clamp(64px, 11vw, 112px);
-      line-height: 1.08;
       font-weight: 400;
-      text-shadow: 0 8px 36px rgba(0,0,0,.28);
+      font-size: clamp(76px, 13vw, 138px);
+      line-height: 1.1;
+      margin: 22px 0 8px;
+      color: #fff1e8;
+      text-shadow: 0 0 45px rgba(219,169,183,.16);
     }
-    .hero-subtitle { max-width: 570px; margin: 6px auto 30px; color: #e1ced7; font-family: 'Cormorant Garamond', serif; font-size: clamp(22px, 3.8vw, 29px); line-height: 1.45; }
-    .ornament { display: flex; align-items: center; gap: 14px; color: var(--gold); margin: 17px 0; }
-    .ornament::before, .ornament::after { content: ''; width: 54px; height: 1px; background: linear-gradient(90deg, transparent, var(--gold)); }
-    .ornament::after { transform: rotate(180deg); }
-    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-top: 22px; }
+
+    .heart-divider {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      color: var(--gold);
+      margin: 18px 0;
+    }
+
+    .heart-divider::before,
+    .heart-divider::after {
+      content: "";
+      width: 65px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold));
+    }
+
+    .heart-divider::after {
+      transform: rotate(180deg);
+    }
+
+    .hero-text {
+      max-width: 570px;
+      color: #e5d4dd;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(23px, 4vw, 31px);
+      line-height: 1.55;
+      margin: 10px 0 32px;
+    }
+
     .button {
-      display: inline-flex; justify-content: center; align-items: center; gap: 9px;
-      border: 1px solid rgba(216,183,121,.7); border-radius: 999px;
-      padding: 14px 23px; min-height: 48px; text-decoration: none;
-      color: var(--cream); background: rgba(255,255,255,.04); cursor: pointer;
-      font-size: 10px; font-weight: 600; letter-spacing: 1.8px; text-transform: uppercase;
-      transition: background .2s ease, transform .2s ease;
+      border: 1px solid rgba(217,189,131,.75);
+      border-radius: 100px;
+      padding: 15px 25px;
+      color: var(--cream);
+      text-decoration: none;
+      background: rgba(255,255,255,.045);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: .25s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
     }
-    .button:hover { background: rgba(216,183,121,.14); transform: translateY(-2px); }
-    .button.primary { color: #261321; background: linear-gradient(135deg, #e8d2a2, #cba66a); border-color: transparent; }
-    .button.primary:hover { background: #f0ddb0; }
-    .music-wrap { width: min(710px, calc(100% - 36px)); margin: -12px auto 85px; }
+
+    .button:hover {
+      transform: translateY(-3px);
+      background: rgba(217,189,131,.15);
+    }
+
+    .button.gold {
+      color: #261521;
+      border-color: transparent;
+      background: linear-gradient(135deg, #ead6a8, #c9a66d);
+    }
+
+    .button.gold:hover {
+      background: #f2dfb5;
+    }
+
+    .music-section {
+      width: min(730px, calc(100% - 36px));
+      margin: 0 auto 100px;
+    }
+
     .music-card {
-      padding: 23px 26px; border: 1px solid rgba(216,183,121,.3); border-radius: 18px;
-      background: linear-gradient(120deg, rgba(255,255,255,.075), rgba(255,255,255,.025));
-      display: flex; align-items: center; justify-content: space-between; gap: 20px;
-      box-shadow: 0 20px 60px rgba(0,0,0,.17);
+      padding: 25px;
+      border: 1px solid rgba(217,189,131,.3);
+      background: linear-gradient(135deg, rgba(255,255,255,.075), rgba(255,255,255,.025));
+      border-radius: 18px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      box-shadow: 0 20px 60px rgba(0,0,0,.16);
     }
-    .music-label { color: var(--gold); font-size: 9px; text-transform: uppercase; letter-spacing: 3px; }
-    .music-title { margin-top: 7px; color: var(--cream); font-family: 'Cormorant Garamond', serif; font-size: 25px; }
-    .music-description { margin-top: 4px; color: #cdbbc5; font-size: 11px; line-height: 1.6; }
-    .music-controls { display: flex; flex-direction: column; gap: 9px; align-items: flex-end; flex-shrink: 0; }
-    .youtube-link { color: var(--gold); font-size: 10px; text-decoration: underline; text-underline-offset: 4px; }
-    #player { margin-top: 17px; width: 100%; aspect-ratio: 16 / 9; border-radius: 14px; overflow: hidden; background: #0b070b; }
-    #player iframe { width: 100%; height: 100%; border: 0; }
-    .section { width: min(920px, calc(100% - 36px)); margin: 0 auto; padding: 22px 0 95px; }
-    .section-heading { text-align: center; margin-bottom: 34px; }
-    .section-heading .small { color: var(--gold); text-transform: uppercase; letter-spacing: 4px; font-size: 9px; }
-    .section-heading h2 { margin: 12px 0 0; color: var(--cream); font: 400 clamp(39px, 7vw, 61px)/1.05 'Cormorant Garamond', serif; }
-    .letter-paper {
-      position: relative; padding: clamp(27px, 6vw, 62px);
-      color: var(--ink); background: linear-gradient(145deg, #fff9f1, #f0e1d4);
-      border: 1px solid rgba(216,183,121,.8); border-radius: 5px;
-      box-shadow: 0 28px 85px rgba(0,0,0,.32);
+
+    .music-kicker {
+      color: var(--gold);
+      text-transform: uppercase;
+      font-size: 9px;
+      letter-spacing: 3px;
     }
-    .letter-paper::before { content: ''; position: absolute; inset: 10px; border: 1px solid rgba(151,103,112,.25); pointer-events: none; }
-    .letter-inner { position: relative; z-index: 1; max-width: 690px; margin: 0 auto; }
-    .letter-date { text-align: right; color: #92717d; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; }
-    .letter-greeting { margin: 28px 0 20px; color: #632b48; font: 400 43px 'Great Vibes', cursive; }
-    .letter-paper p { margin: 0 0 17px; color: #493341; font: 400 clamp(16px, 2vw, 18px)/1.9 'Cormorant Garamond', serif; }
-    .letter-paper p strong { color: #71334f; font-weight: 700; }
-    .letter-sign { margin-top: 30px !important; color: #74344f !important; font: 400 39px 'Great Vibes', cursive !important; line-height: 1.2 !important; }
-    .values { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 24px; }
-    .value-card { min-height: 155px; padding: 24px 18px; text-align: center; border: 1px solid rgba(216,183,121,.22); border-radius: 14px; background: rgba(255,255,255,.035); }
-    .value-icon { color: var(--gold); font-size: 23px; }
-    .value-card h3 { margin: 12px 0 8px; color: var(--cream); font: 500 23px 'Cormorant Garamond', serif; }
-    .value-card p { margin: 0; color: #cdbbc5; font-size: 11px; line-height: 1.7; }
-    .question-section { padding: 80px 18px 105px; text-align: center; border-top: 1px solid rgba(216,183,121,.18); background: radial-gradient(ellipse at center, rgba(108,40,72,.28), transparent 65%); }
-    .question-section .question-kicker { color: var(--gold); font-size: 10px; letter-spacing: 4px; text-transform: uppercase; }
-    .question-section h2 { margin: 19px auto 15px; color: var(--cream); font: 400 clamp(46px, 9vw, 83px)/1.12 'Great Vibes', cursive; }
-    .question-section .question-text { max-width: 500px; margin: 0 auto; color: #ddcbd5; font: 400 21px/1.6 'Cormorant Garamond', serif; }
-    .answer-buttons { display: flex; gap: 13px; flex-wrap: wrap; justify-content: center; margin: 30px 0 0; }
-    #answer-message { display: none; max-width: 580px; margin: 27px auto 0; padding: 20px 23px; border: 1px solid rgba(216,183,121,.35); border-radius: 14px; color: var(--cream); background: rgba(255,255,255,.06); font: 400 21px/1.6 'Cormorant Garamond', serif; }
-    footer { padding: 22px 15px 32px; text-align: center; color: #a992a0; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; }
+
+    .music-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 28px;
+      margin-top: 8px;
+    }
+
+    .music-subtitle {
+      color: #cdbbc5;
+      font-size: 11px;
+      line-height: 1.7;
+      margin-top: 4px;
+    }
+
+    .music-actions {
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 10px;
+    }
+
+    .youtube-link {
+      color: var(--gold);
+      font-size: 10px;
+      text-underline-offset: 4px;
+    }
+
+    #music-player {
+      margin-top: 18px;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border-radius: 15px;
+      overflow: hidden;
+      background: #080608;
+    }
+
+    #music-player iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .letter-section {
+      width: min(900px, calc(100% - 34px));
+      margin: auto;
+      padding-bottom: 110px;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .section-title span {
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      font-size: 9px;
+    }
+
+    .section-title h2 {
+      color: var(--cream);
+      font: 400 clamp(42px, 7vw, 65px)/1.1 'Cormorant Garamond', serif;
+      margin: 13px 0 0;
+    }
+
+    .paper {
+      padding: clamp(28px, 7vw, 70px);
+      color: var(--ink);
+      background:
+        radial-gradient(ellipse at 10% 10%, rgba(255,255,255,.8), transparent 40%),
+        linear-gradient(145deg, #fff9f1, #f0e1d5);
+      border: 1px solid rgba(217,189,131,.8);
+      box-shadow: 0 30px 90px rgba(0,0,0,.32);
+      border-radius: 5px;
+      position: relative;
+    }
+
+    .paper::before {
+      content: "";
+      position: absolute;
+      inset: 11px;
+      border: 1px solid rgba(130,79,99,.22);
+      pointer-events: none;
+    }
+
+    .paper-content {
+      position: relative;
+      max-width: 690px;
+      margin: auto;
+    }
+
+    .paper-date {
+      text-align: right;
+      color: #92717e;
+      font-size: 9px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .greeting {
+      color: #71364f;
+      font: 400 49px 'Great Vibes', cursive;
+      margin: 30px 0 22px;
+    }
+
+    .paper p {
+      color: #493542;
+      font: 400 clamp(17px, 2.3vw, 19px)/1.9 'Cormorant Garamond', serif;
+      margin: 0 0 19px;
+    }
+
+    .paper strong {
+      color: #783a55;
+      font-weight: 700;
+    }
+
+    .signature {
+      color: #783a55 !important;
+      font: 400 43px 'Great Vibes', cursive !important;
+      margin-top: 35px !important;
+      line-height: 1.2 !important;
+    }
+
+    .little-things {
+      width: min(900px, calc(100% - 36px));
+      margin: 0 auto 110px;
+    }
+
+    .little-heading {
+      text-align: center;
+      font: 400 clamp(36px, 6vw, 53px) 'Cormorant Garamond', serif;
+      margin: 0 0 30px;
+    }
+
+    .little-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+    }
+
+    .little-card {
+      text-align: center;
+      padding: 28px 18px;
+      border: 1px solid rgba(217,189,131,.22);
+      border-radius: 15px;
+      background: rgba(255,255,255,.035);
+    }
+
+    .little-icon {
+      color: var(--gold);
+      font-size: 25px;
+    }
+
+    .little-card h3 {
+      color: var(--cream);
+      font: 500 25px 'Cormorant Garamond', serif;
+      margin: 13px 0 8px;
+    }
+
+    .little-card p {
+      color: #cdbbc5;
+      font-size: 11px;
+      line-height: 1.8;
+      margin: 0;
+    }
+
+    .final-section {
+      text-align: center;
+      padding: 100px 20px 120px;
+      border-top: 1px solid rgba(217,189,131,.17);
+      background: radial-gradient(ellipse at center, rgba(115,49,79,.3), transparent 68%);
+    }
+
+    .final-overline {
+      color: var(--gold);
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+    }
+
+    .final-section h2 {
+      color: #fff3eb;
+      font: 400 clamp(55px, 10vw, 94px)/1.15 'Great Vibes', cursive;
+      margin: 22px 0 15px;
+    }
+
+    .final-text {
+      max-width: 540px;
+      margin: auto;
+      color: #deccd6;
+      font: 400 22px/1.6 'Cormorant Garamond', serif;
+    }
+
+    .answer-buttons {
+      margin-top: 32px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 13px;
+    }
+
+    #answer {
+      display: none;
+      max-width: 560px;
+      margin: 30px auto 0;
+      padding: 22px;
+      color: var(--cream);
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(217,189,131,.35);
+      border-radius: 15px;
+      font: 400 22px/1.6 'Cormorant Garamond', serif;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px 15px 35px;
+      color: #a993a0;
+      font-size: 9px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
     @media (max-width: 650px) {
-      .topbar { width: calc(100% - 30px); padding: 18px 0; }
-      .top-note { max-width: 150px; line-height: 1.6; font-size: 8px; }
-      .hero { min-height: 530px; padding: 72px 0 64px; }
-      .eyebrow { letter-spacing: 3px; }
-      .music-card { align-items: flex-start; flex-direction: column; }
-      .music-controls { width: 100%; align-items: flex-start; }
-      .music-controls .button { width: 100%; }
-      .values { grid-template-columns: 1fr; }
-      .value-card { min-height: auto; }
-      .section { padding-bottom: 70px; }
-      .letter-date { font-size: 8px; }
-      .letter-greeting { font-size: 38px; }
+      .header {
+        width: calc(100% - 30px);
+      }
+
+      .hero {
+        min-height: 590px;
+        padding: 75px 20px;
+      }
+
+      .music-card {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .music-actions {
+        width: 100%;
+        align-items: flex-start;
+      }
+
+      .music-actions .button {
+        width: 100%;
+      }
+
+      .little-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .paper-date {
+        font-size: 8px;
+      }
     }
   </style>
 </head>
+
 <body>
-  <div class="page">
-    <header class="topbar">
-      <div class="brand">N <span style="color:#f0d9df">♡</span></div>
-      <div class="top-note">Una pequeña sorpresa<br>hecha especialmente para ti</div>
-    </header>
+<div class="page">
 
-    <main>
-      <section class="hero" id="inicio">
-        <div class="eyebrow">Hay algo que llevo tiempo queriendo decirte</div>
-        <h1>Para Noelia</h1>
-        <div class="ornament">✧</div>
-        <p class="hero-subtitle">No quería decirlo de cualquier manera. Quería preparar un pequeño rincón que guardara unas palabras sinceras para ti.</p>
-        <div class="hero-actions">
-          <a class="button primary" href="#carta">Leer mi carta <span>♡</span></a>
-          <a class="button" href="#musica">Primero, nuestra canción ♪</a>
-        </div>
-      </section>
+  <header class="header">
+    <div class="logo">N <span style="color:#e5b7c4">♡</span></div>
+    <div class="header-note">Unas palabras<br>que nacen del corazón</div>
+  </header>
 
-      <section class="music-wrap" id="musica" aria-label="Canción">
-        <div class="music-card">
-          <div>
-            <div class="music-label">Un momento para escuchar</div>
-            <div class="music-title">Esta canción es para ti</div>
-            <div class="music-description">Puedes ponerla mientras lees. La carta está aquí debajo, escrita y visible; no tienes que desbloquear nada.</div>
-          </div>
-          <div class="music-controls">
-            <button class="button primary" id="play-music" type="button">▶ Escuchar canción</button>
-            <a class="youtube-link" href="https://www.youtube.com/watch?v=w-rVk2j7aT4" target="_blank" rel="noopener">Abrir directamente en YouTube ↗</a>
-          </div>
-        </div>
-        <div id="player" hidden></div>
-      </section>
+  <main>
 
-      <section class="section" id="carta">
-        <div class="section-heading">
-          <div class="small">De mí para ti</div>
-          <h2>Quería que leyeras esto</h2>
-        </div>
-        <article class="letter-paper">
-          <div class="letter-inner">
-            <div class="letter-date">Para alguien muy especial</div>
-            <div class="letter-greeting">Noelia,</div>
-            <p>No sé cuál es la forma perfecta de empezar una carta como esta, porque cuando se trata de decir algo que de verdad importa, a veces las palabras parecen quedarse pequeñas. Aun así, quería intentarlo. No quería quedarme con todo esto dentro ni decirlo deprisa, como si fuera cualquier cosa. Quería que tuvieras un momento para leerlo con calma y sentir que cada palabra está aquí por una razón.</p>
-            <p>Desde que empezamos a hablar, me has despertado una ilusión muy bonita. Poco a poco has ido ocupando un lugar especial en mis pensamientos. Me gusta cuando hablamos, cuando nos contamos cualquier tontería y cuando una conversación sencilla termina convirtiéndose en uno de esos momentos que te alegran el día. Puede parecer algo pequeño, pero para mí esos detalles tienen mucho valor.</p>
-            <p>Me gusta conocerte. Me gusta descubrir cómo eres, qué cosas te hacen reír, qué te ilusiona, qué te preocupa y todas esas partes de ti que quizá no todo el mundo llega a conocer. No quiero fijarme solamente en tus mejores días ni en los momentos en los que todo es fácil. También quiero poder escucharte cuando tengas un día complicado, respetar tus silencios cuando necesites espacio y acompañarte sin hacerte sentir que tienes que fingir estar bien.</p>
-            <p>No te escribo para decirte que eres perfecta, porque nadie tiene que serlo. Te escribo porque me gusta que seas tú, con tu forma de pensar, tus ocurrencias, tus virtudes, tus pequeños defectos y esa manera tan tuya de hacer que los momentos tengan algo especial. No quiero que sientas que tienes que cambiar para gustarme o demostrarme nada. <strong>Me gustaría que pudieras ser tú misma conmigo, con tranquilidad y confianza.</strong></p>
-            <p>También quiero que sepas que no espero una historia de película ni una relación en la que nunca exista un desacuerdo. Sé que dos personas pueden pensar diferente, tener días malos o no entenderse a la primera. Para mí lo importante sería aprender a hablar las cosas, escucharnos de verdad, pedir perdón cuando toque y cuidar lo que estamos construyendo. No quiero prometerte que todo será perfecto; prefiero prometerte que, por mi parte, intentaré actuar con sinceridad, respeto y cariño.</p>
-            <p>Me gustaría compartir contigo muchas cosas: conversaciones que se alarguen sin mirar la hora, risas por tonterías, momentos tranquilos, recuerdos que algún día podamos recordar con una sonrisa y también esos días normales que, cuando los compartes con alguien especial, dejan de ser tan normales. No hace falta que cada día sea extraordinario. A veces basta con saber que puedes contar con alguien y que esa persona tiene ganas de saber cómo te ha ido.</p>
-            <p>Quiero conocerte cada vez mejor, sin correr y sin convertir esto en una presión. Quiero que podamos hablar con confianza, decir lo que sentimos y sentir que los dos tenemos voz. Para mí una relación bonita no consiste solamente en decir palabras preciosas, sino en demostrar con los detalles que la otra persona importa: prestar atención, cumplir lo que se dice, tener paciencia y no dar por sentado el cariño que recibimos.</p>
-            <p>Quizá esta carta sea un poco larga, pero no quería resumir algo que para mí merece tiempo. Me hacía ilusión preparar esto para ti porque no quería hacer una pregunta tan importante con un simple mensaje. Quería que vieras que me he parado a pensar en cómo decírtelo y que detrás de esta página hay una intención muy sencilla: hacerte saber lo especial que eres para mí y lo mucho que me gustaría dar un paso más contigo.</p>
-            <p>Noelia, me gustas. Me gusta lo que estoy descubriendo de ti y me ilusiona imaginar todo lo bonito que podríamos vivir si los dos queremos. No te pido que tengas una respuesta perfecta ni que sientas ninguna obligación. Quiero que respondas con el corazón y con libertad, porque tu tranquilidad y lo que tú quieras también importan.</p>
-            <p>Gracias por cada conversación, por cada sonrisa que me has sacado y por dejarme conocer un poquito más de ti. Ojalá esta sea la primera de muchas páginas de una historia que podamos escribir entre los dos, a nuestra manera, con paciencia, confianza y mucho cariño.</p>
-            <p><strong>Y ahora sí, después de tantas palabras, quiero preguntarte algo que llevo en el corazón:</strong></p>
-            <p class="letter-sign">Con muchísimo cariño, para ti. ♡</p>
-          </div>
-        </article>
+    <section class="hero">
+      <div class="overline">Hay algo que quiero preguntarte</div>
+      <h1>Noelia</h1>
+      <div class="heart-divider">✧</div>
+      <p class="hero-text">
+        A veces hay sentimientos que merecen algo más que un mensaje.
+        Por eso he preparado este pequeño lugar para ti.
+      </p>
+      <a href="#carta" class="button gold">Descubrir mi carta ♡</a>
+    </section>
 
-        <div class="values" aria-label="Lo que deseo compartir contigo">
-          <div class="value-card">
-            <div class="value-icon">♡</div>
-            <h3>Con sinceridad</h3>
-            <p>Hablar con el corazón, escucharnos y poder ser nosotros mismos.</p>
-          </div>
-          <div class="value-card">
-            <div class="value-icon">✧</div>
-            <h3>Sin prisas</h3>
-            <p>Disfrutar cada paso, sin presiones y respetando nuestros tiempos.</p>
-          </div>
-          <div class="value-card">
-            <div class="value-icon">∞</div>
-            <h3>Con cariño</h3>
-            <p>Cuidar los detalles y demostrar con hechos lo que sentimos.</p>
+    <section class="music-section">
+      <div class="music-card">
+        <div>
+          <div class="music-kicker">Una canción para acompañar estas palabras</div>
+          <div class="music-title">Dale al play y léela con calma</div>
+          <div class="music-subtitle">
+            Quería que esta canción también formara parte de este momento.
           </div>
         </div>
-      </section>
 
-      <section class="question-section" id="pregunta">
-        <div class="question-kicker">Y la pregunta más importante</div>
-        <h2>¿Quieres ser mi novia?</h2>
-        <p class="question-text">Me haría muchísima ilusión empezar esta etapa contigo. Pero, sobre todo, quiero que tu respuesta sea libre y sincera.</p>
-        <div class="answer-buttons">
-          <button class="button primary" id="yes-button" type="button">Sí, quiero ♡</button>
-          <button class="button" id="think-button" type="button">Quiero pensarlo</button>
+        <div class="music-actions">
+          <button class="button gold" id="playMusic" type="button">
+            ▶ Escuchar canción
+          </button>
+          <a class="youtube-link"
+             href="https://www.youtube.com/watch?v=w-rVk2j7aT4"
+             target="_blank" rel="noopener">
+            Abrir en YouTube ↗
+          </a>
         </div>
-        <div id="answer-message" role="status" aria-live="polite"></div>
-      </section>
-    </main>
-    <footer>Hecho con cariño · Para Noelia ♡</footer>
-  </div>
+      </div>
 
-  <script>
-    // La carta y todos los textos están en el HTML: se ven incluso si JavaScript falla.
-    const playButton = document.getElementById('play-music');
-    const player = document.getElementById('player');
-    let musicLoaded = false;
+      <div id="music-player" hidden></div>
+    </section>
 
-    playButton.addEventListener('click', function () {
-      if (!musicLoaded) {
-        const iframe = document.createElement('iframe');
-        iframe.src = 'https://www.youtube.com/embed/w-rVk2j7aT4?autoplay=1&playsinline=1&rel=0';
-        iframe.title = 'Canción para Noelia en YouTube';
-        iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
-        iframe.referrerPolicy = 'strict-origin-when-cross-origin';
-        iframe.allowFullscreen = true;
-        player.appendChild(iframe);
-        player.hidden = false;
-        musicLoaded = true;
-        playButton.textContent = '♪ Canción cargada';
-      } else {
-        player.hidden = !player.hidden;
-        playButton.textContent = player.hidden ? '▶ Mostrar canción' : '♪ Ocultar reproductor';
-      }
-    });
+    <section class="letter-section" id="carta">
+      <div class="section-title">
+        <span>Lo que quiero decirte</span>
+        <h2>Una carta para ti</h2>
+      </div>
 
-    const answerMessage = document.getElementById('answer-message');
-    document.getElementById('yes-button').addEventListener('click', function () {
-      answerMessage.textContent = 'No sabes lo feliz que me hace leer ese sí. Gracias por darme la oportunidad de vivir algo bonito contigo. Quiero que cuidemos esto entre los dos, paso a paso y con mucho cariño. ♡';
-      answerMessage.style.display = 'block';
-      answerMessage.scrollIntoView({ behavior: 'auto', block: 'center' });
-    });
-    document.getElementById('think-button').addEventListener('click', function () {
-      answerMessage.textContent = 'Está bien, Noelia. Tómate el tiempo que necesites. No quiero que te sientas presionada; prefiero que me respondas cuando estés segura de lo que sientes. Gracias por leer mi carta. ♡';
-      answerMessage.style.display = 'block';
-      answerMessage.scrollIntoView({ behavior: 'auto', block: 'center' });
-    });
-  </script>
-</body>
-</html>
+      <article class="paper">
+        <div class="paper-content">
+          <div class="paper-date">Escrito especialmente para Noelia</div>
+
+          <div class="greeting">Querida Noelia...</div>
+
+          <p>
+            No sabía muy bien cómo empezar esta carta. He pensado varias veces
+            en qué decirte y cómo hacerlo, porque no quería que fuese una
+            declaración cualquiera. Quería dedicarte un momento, unas palabras
+            y un pequeño detalle que te hiciera sentir lo especial que eres
+            para mí.
+          </p>
+
+          <p>
+            Desde que llegaste, poco a poco has conseguido despertar en mí
+            una ilusión muy bonita. Me gusta hablar contigo, saber cómo te ha
+            ido el día, escuchar tus historias y compartir incluso las
+            conversaciones más sencillas. Es curioso cómo algo tan pequeño
+            como recibir un mensaje puede conseguir que un día normal se
+            vuelva un poquito más bonito.
+          </p>
+
+          <p>
+            Hay muchas cosas de ti que todavía quiero descubrir. Quiero
+            conocer tus gustos, tus sueños, tus pensamientos, tus pequeñas
+            manías y todas esas cosas que forman parte de tu manera de ser.
+            Quiero saber qué te hace feliz, qué te emociona y qué cosas
+            guardas en tu corazón. No quiero conocer solamente una parte de
+            ti; me gustaría descubrirte poco a poco, de verdad.
+          </p>
+
+          <p>
+            No quiero que pienses que tienes que ser perfecta conmigo.
+            No tienes que aparentar estar siempre feliz, tener siempre las
+            palabras adecuadas ni esconder tus días difíciles. Todos tenemos
+            nuestras propias formas de pensar, nuestros defectos y nuestras
+            inseguridades. Y precisamente por eso quiero que puedas sentirte
+            libre de ser tú misma cuando estés conmigo.
+          </p>
+
+          <p>
+            Me gustaría ser alguien con quien puedas hablar tranquilamente,
+            alguien que te escuche sin juzgarte y que tenga interés por saber
+            cómo estás de verdad. Alguien que no solamente aparezca cuando
+            todo va bien, sino que también sepa tener paciencia cuando las
+            cosas se compliquen.
+          </p>
+
+          <p>
+            No voy a prometerte una historia perfecta, porque sé que esas
+            cosas no existen. Habrá días buenos, días normales y quizá algún
+            momento en el que no pensemos igual. Pero creo que lo bonito de
+            querer a alguien también está en aprender a entenderse, hablar
+            con sinceridad, respetarse y cuidar lo que se tiene.
+          </p>
+
+          <p>
+            No quiero que una relación sea una obligación ni que ninguno de
+            los dos tenga que dejar de ser quien es. Me gustaría que fuese
+            algo que nos hiciera bien, que nos diera tranquilidad y que nos
+            permitiera crecer juntos sin perder nuestra propia esencia.
+          </p>
+
+          <p>
+            Quiero compartir contigo momentos que quizá parezcan pequeños,
+            pero que con el tiempo se conviertan en recuerdos importantes.
+            Reírnos por cualquier tontería, contarnos cómo nos ha ido,
+            apoyarnos en nuestros objetivos, hablar de nuestros sueños y
+            disfrutar de la compañía del otro incluso cuando no haya nada
+            extraordinario que hacer.
+          </p>
+
+          <p>
+            Porque para mí no se trata solamente de decir cosas bonitas.
+            Se trata de demostrar con detalles que una persona importa.
+            Se trata de prestar atención, recordar lo que te gusta, respetar
+            tus tiempos, cuidar las palabras y tener ganas de seguir
+            conociéndote cada día un poquito más.
+          </p>
+
+          <p>
+            Quiero que sepas que lo que siento no nace de querer tener a
+            alguien a mi lado por tenerlo. Nace de la ilusión que me hace
+            conocerte y de las ganas que tengo de descubrir qué podríamos
+            construir juntos. No quiero adelantarme a todo lo que pueda pasar;
+            prefiero disfrutar cada paso y dejar que las cosas sean sinceras.
+          </p>
+
+          <p>
+            Puede que esta carta no tenga las palabras más perfectas del
+            mundo, pero sí tiene algo que para mí vale mucho más:
+            <strong>está escrita con toda la sinceridad que puedo ofrecerte.</strong>
+            No quería copiar una declaración cualquiera ni limitarme a
+            decirte dos frases bonitas. Quería que supieras que me he tomado
+            el tiempo de preparar esto porque de verdad me importas.
+          </p>
+
+          <p>
+            Me ilusiona imaginar todos esos pequeños momentos que podríamos
+            vivir. Las conversaciones interminables, las risas inesperadas,
+            los mensajes que llegan justo cuando hacen falta y los recuerdos
+            que algún día podremos mirar atrás y recordar con una sonrisa.
+          </p>
+
+          <p>
+            Noelia, me gustas. Me gusta lo que estoy descubriendo de ti y me
+            gustaría tener la oportunidad de seguir conociéndote de una forma
+            todavía más especial. No te pido que seas alguien diferente ni
+            que tengas una respuesta por compromiso. Quiero que seas sincera
+            conmigo, porque lo que tú sientes también es importante.
+          </p>
+
+          <p>
+            Y si los dos sentimos lo mismo, me encantaría que pudiéramos
+            empezar algo bonito. Algo nuestro, sin comparaciones, sin
+            expectativas imposibles y sin prisas. Una historia que no tenga
+            que ser perfecta para ser especial, porque lo importante sería
+            que los dos eligiéramos cuidarla.
+          </p>
+
+          <p>
+            Gracias por estar aquí leyendo todo esto. Gracias por cada
+            conversación y por cada pequeño momento que me ha hecho sonreír.
+            No sé exactamente qué nos espera, pero sí sé que me haría mucha
+            ilusión descubrirlo contigo.
+          </p>
+
+          <p>
+            Y después de escribirte tanto, creo que ya ha llegado el momento
+            de hacerte la pregunta que realmente quería hacerte desde el
+            principio...
+          </p>
+
+          <p><strong>Noelia, ¿me dejarías compartir contigo esta pequeña aventura?</strong></p>
+
+          <div class="signature">Con mucho cariño, para ti. ♡</div>
+        </div>
+      </article>
+    </section>
+
+    <section class="little-things">
+      <div class="section-title">
+        <span>Lo que me gustaría compartir</span>
+        <h2 class="little-heading">Sin prisas, pero con ilusión</h2>
+      </div>
+
+      <div class="little-grid">
+        <div class="little-card">
+          <div class="little-icon">♡</div>
+          <h3>Confianza</h3>
+          <p>Que podamos hablar con sinceridad y sentirnos cómodos siendo nosotros mismos.</p>
+        </div>
+
+        <div class="little-card">
+          <div class="little-icon">✧</div>
+          <h3>Momentos</h3>
+          <p>Crear recuerdos bonitos incluso en los días más sencillos.</p>
+        </div>
+
+        <div class="little-card">
+          <div class="little-icon">∞</div>
+          <h3>Respeto</h3>
+          <p>Escucharnos, comprendernos y cuidar lo que decidamos construir.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="final-section" id="pregunta">
+      <div class="final-overline">Y ahora sí, Noelia...</div>
+
+      <h2>¿Quieres ser mi novia?</h2>
+
+      <p class="final-text">
+        Me haría muchísima ilusión poder empezar esta historia contigo.
+        No quiero una respuesta por compromiso, solo quiero saber qué
+        siente tu corazón.
+      </p>
+
+      <div class="answer-buttons">
+        <button class="button gold" id="yesButton" type="button">
+          Sí, quiero ♡
+        </button>
+
+        <button class="button" id="thinkButton" type="button">
+          Necesito pensarlo
+        </button>
+      </div>
+
+      <div id="answer" role="status" aria-live="polite"></div>
