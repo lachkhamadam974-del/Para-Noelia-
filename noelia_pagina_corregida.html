@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#170b18">
+<meta name="description" content="Una página especial para Noelia.">
+<title>Para Noelia, con cariño ♡</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--night:#170b18;--night2:#261326;--wine:#54243e;--gold:#d9bd83;--rose:#ddaab9;--cream:#fff6ed;--ink:#493341;--muted:#d7c3ce}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:20px}
+body{margin:0;color:var(--cream);background:radial-gradient(ellipse at 50% 0%,#512541 0%,transparent 43%),linear-gradient(160deg,#100811,#241322 55%,#100811);font-family:Montserrat,sans-serif;overflow-x:hidden}
+button,a{-webkit-tap-highlight-color:transparent}button{font-family:inherit}a{color:inherit}
+[hidden]{display:none!important}
+.stars{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.35;background-image:radial-gradient(1px 1px at 10% 20%,#fff 99%,transparent),radial-gradient(2px 2px at 80% 30%,#e7c994 99%,transparent),radial-gradient(1px 1px at 40% 70%,#fff 99%,transparent),radial-gradient(2px 2px at 90% 85%,#e7c994 99%,transparent),radial-gradient(1px 1px at 20% 90%,#fff 99%,transparent);background-size:300px 300px}
+.page{position:relative;z-index:1}
+header{width:min(1120px,calc(100% - 38px));margin:auto;padding:23px 0;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(217,189,131,.22)}
+.logo{color:var(--gold);font:500 25px 'Cormorant Garamond',serif;letter-spacing:4px}
+.header-note{text-align:right;color:#d5c0cb;font-size:9px;letter-spacing:2px;line-height:1.8;text-transform:uppercase}
+nav{width:min(1120px,calc(100% - 38px));margin:auto;padding:15px 0;display:flex;justify-content:center;flex-wrap:wrap;gap:12px 22px;border-bottom:1px solid rgba(217,189,131,.12)}
+nav a{color:#d6c2cd;text-decoration:none;font-size:9px;letter-spacing:1.4px;text-transform:uppercase;transition:color .2s}nav a:hover{color:var(--gold)}
+.hero{min-height:690px;padding:95px 20px 80px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.eyebrow,.section-kicker{color:var(--gold);font-size:10px;letter-spacing:5px;text-transform:uppercase}
+.hero h1{color:#fff1e8;font:400 clamp(80px,14vw,145px)/1.05 'Great Vibes',cursive;margin:25px 0 10px;text-shadow:0 0 50px rgba(219,169,183,.2)}
+.ornament{color:var(--gold);display:flex;align-items:center;gap:17px;margin:20px 0}.ornament:before,.ornament:after{content:"";width:65px;height:1px;background:linear-gradient(90deg,transparent,var(--gold))}.ornament:after{transform:rotate(180deg)}
+.hero-text{max-width:590px;color:#e4d1dc;font:400 clamp(23px,4vw,31px)/1.55 'Cormorant Garamond',serif;margin:10px auto 30px}
+.button{display:inline-flex;align-items:center;justify-content:center;gap:9px;border:1px solid rgba(217,189,131,.75);border-radius:100px;padding:15px 25px;min-height:48px;background:rgba(255,255,255,.04);color:var(--cream);text-decoration:none;font-size:10px;font-weight:600;letter-spacing:1.7px;text-transform:uppercase;cursor:pointer;transition:transform .2s,background .2s}
+.button:hover{transform:translateY(-2px);background:rgba(217,189,131,.15)}.button.gold{color:#271521;border-color:transparent;background:linear-gradient(135deg,#ead6a8,#c9a66d)}.button.gold:hover{background:#f2dfb5}
+.button-row{display:flex;flex-wrap:wrap;justify-content:center;gap:12px}.scroll-note{margin-top:58px;color:#a993a0;font-size:9px;letter-spacing:3px;text-transform:uppercase}
+.section{width:min(930px,calc(100% - 36px));margin:0 auto;padding:78px 0}
+.section-heading{text-align:center;margin-bottom:38px}.section-heading .section-kicker{font-size:9px}.section-heading h2{color:var(--cream);font:400 clamp(42px,7vw,65px)/1.1 'Cormorant Garamond',serif;margin:13px 0 0}
+.section-intro{max-width:620px;margin:15px auto 0;color:#d5c2cd;font:400 20px/1.7 'Cormorant Garamond',serif;text-align:center}
+.welcome-panel{padding:clamp(28px,6vw,55px);border:1px solid rgba(217,189,131,.27);border-radius:4px;background:linear-gradient(140deg,rgba(255,255,255,.065),rgba(255,255,255,.015));text-align:center}
+.big-quote{color:var(--gold);font:400 65px 'Cormorant Garamond',serif;line-height:.8}.welcome-panel p{max-width:670px;margin:20px auto 0;color:#e4d2dc;font:400 23px/1.75 'Cormorant Garamond',serif}
+.music-card{border:1px solid rgba(217,189,131,.3);border-radius:19px;background:linear-gradient(135deg,rgba(255,255,255,.08),rgba(255,255,255,.025));padding:27px;display:flex;justify-content:space-between;align-items:center;gap:20px;box-shadow:0 20px 60px rgba(0,0,0,.16)}
+.music-label{color:var(--gold);font-size:9px;letter-spacing:3px;text-transform:uppercase}.music-title{font:500 29px 'Cormorant Garamond',serif;margin-top:8px}.music-description{color:#cdbbc5;font-size:11px;line-height:1.8;margin-top:5px}
+.music-actions{display:flex;flex-direction:column;gap:10px;align-items:flex-end;flex-shrink:0}.youtube-link{color:var(--gold);font-size:10px;text-underline-offset:4px}
+#music-player{margin-top:18px;width:100%;aspect-ratio:16/9;min-height:190px;border-radius:15px;overflow:hidden;background:#080608;border:1px solid rgba(217,189,131,.25)}#music-player iframe{display:block;width:100%;height:100%;min-height:190px;border:0}
+.music-help{color:#bda9b5;font-size:10px;line-height:1.7;margin:12px 4px 0}
+.timeline{position:relative;max-width:740px;margin:0 auto}.timeline:before{content:"";position:absolute;top:10px;bottom:10px;left:18px;width:1px;background:linear-gradient(var(--gold),rgba(217,189,131,.08))}
+.timeline-item{position:relative;padding:0 0 36px 58px}.timeline-item:last-child{padding-bottom:0}.timeline-dot{position:absolute;top:3px;left:11px;width:15px;height:15px;background:var(--gold);border:4px solid #382039;border-radius:50%;box-shadow:0 0 0 1px var(--gold)}
+.timeline-label{color:var(--gold);letter-spacing:2px;text-transform:uppercase;font-size:9px}.timeline-item h3{color:var(--cream);font:500 29px 'Cormorant Garamond',serif;margin:8px 0}.timeline-item p{margin:0;color:#d4c1cc;font:400 18px/1.75 'Cormorant Garamond',serif}
+.cards-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:15px}
+.reveal-card{border:1px solid rgba(217,189,131,.24);border-radius:13px;background:rgba(255,255,255,.035);overflow:hidden;transition:background .2s,border-color .2s}
+.reveal-card[open]{background:rgba(107,53,81,.22);border-color:rgba(217,189,131,.6)}
+.reveal-card summary{list-style:none;cursor:pointer;min-height:155px;padding:24px;display:block}.reveal-card summary::-webkit-details-marker{display:none}.reveal-card summary:after{content:"＋";float:right;color:var(--gold);font-size:18px}.reveal-card[open] summary:after{content:"−"}
+.card-number{color:var(--gold);font:400 30px 'Cormorant Garamond',serif}.reveal-card h3{color:var(--cream);font:500 25px 'Cormorant Garamond',serif;margin:10px 0}.card-hint{color:#bca8b5;font-size:10px;letter-spacing:1px}
+.card-extra{color:#e1cfda;font:400 18px/1.65 'Cormorant Garamond',serif;padding:0 24px 24px;margin:0}
+.wish-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.wish{min-height:175px;padding:24px 17px;text-align:center;border:1px solid rgba(217,189,131,.2);border-radius:14px;background:rgba(255,255,255,.035)}
+.wish-icon{color:var(--gold);font-size:25px}.wish h3{margin:12px 0 8px;color:var(--cream);font:500 24px 'Cormorant Garamond',serif}.wish p{margin:0;color:#cdbbc5;font-size:11px;line-height:1.8}
+.question-box{padding:clamp(26px,5vw,45px);border:1px solid rgba(217,189,131,.25);border-radius:17px;background:linear-gradient(135deg,rgba(255,255,255,.065),rgba(255,255,255,.02));text-align:center}
+.question-box h3{color:var(--cream);font:400 34px 'Cormorant Garamond',serif;margin:0 0 10px}.question-box p{max-width:570px;color:#d4c1cd;font:400 18px/1.7 'Cormorant Garamond',serif;margin:0 auto 23px}
+.question-options{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}.choice-button{padding:12px 17px;border:1px solid rgba(217,189,131,.45);border-radius:100px;background:transparent;color:var(--cream);font-size:10px;cursor:pointer}.choice-button:hover,.choice-button.selected{background:rgba(217,189,131,.17);border-color:var(--gold)}
+#choice-result{color:var(--gold);font:400 21px/1.5 'Cormorant Garamond',serif;margin-top:22px;min-height:1px}
+.letter-section{width:min(900px,calc(100% - 34px));margin:auto;padding:78px 0 90px}
+.paper{padding:clamp(28px,7vw,70px);color:var(--ink);background:radial-gradient(ellipse at 10% 10%,rgba(255,255,255,.8),transparent 40%),linear-gradient(145deg,#fff9f1,#f0e1d5);border:1px solid rgba(217,189,131,.8);box-shadow:0 30px 90px rgba(0,0,0,.32);border-radius:5px;position:relative}
+.paper:before{content:"";position:absolute;inset:11px;border:1px solid rgba(130,79,99,.22);pointer-events:none}.paper-content{position:relative;max-width:690px;margin:auto}.paper-date{text-align:right;color:#92717e;font-size:9px;letter-spacing:2px;text-transform:uppercase}.greeting{color:#71364f;font:400 49px 'Great Vibes',cursive;margin:30px 0 22px}
+.paper p{color:#493542;font:400 clamp(17px,2.3vw,19px)/1.9 'Cormorant Garamond',serif;margin:0 0 19px}.paper strong{color:#783a55;font-weight:700}.signature{color:#783a55!important;font:400 43px 'Great Vibes',cursive!important;margin-top:35px!important;line-height:1.2!important}
+.after-letter{max-width:740px;margin:0 auto;text-align:center;padding:20px}.after-letter .quote{color:var(--gold);font:400 54px 'Cormorant Garamond',serif}.after-letter p{color:#e0ced8;font:400 24px/1.7 'Cormorant Garamond',serif}
+.promise-list{display:grid;grid-template-columns:repeat(2,1fr);gap:13px}.promise{padding:22px;border-left:2px solid var(--gold);background:rgba(255,255,255,.035)}.promise h3{color:var(--gold);font:500 23px 'Cormorant Garamond',serif;margin:0 0 7px}.promise p{color:#d4c1cc;font:400 17px/1.65 'Cormorant Garamond',serif;margin:0}
+.final-section{text-align:center;padding:115px 20px 125px;border-top:1px solid rgba(217,189,131,.17);background:radial-gradient(ellipse at center,rgba(115,49,79,.3),transparent 68%)}
+.final-overline{color:var(--gold);font-size:10px;text-transform:uppercase;letter-spacing:4px}.final-section h2{color:#fff3eb;font:400 clamp(55px,10vw,94px)/1.15 'Great Vibes',cursive;margin:22px 0 15px}.final-text{max-width:540px;margin:auto;color:#deccd6;font:400 22px/1.6 'Cormorant Garamond',serif}
+.answer-buttons{margin-top:32px;display:flex;flex-wrap:wrap;justify-content:center;gap:13px}#answer{display:none;max-width:580px;margin:30px auto 0;padding:24px;color:var(--cream);background:rgba(255,255,255,.06);border:1px solid rgba(217,189,131,.35);border-radius:15px;font:400 22px/1.65 'Cormorant Garamond',serif}
+footer{text-align:center;padding:27px 15px 38px;color:#a993a0;font-size:9px;letter-spacing:2px;text-transform:uppercase}.footer-heart{display:block;color:var(--gold);font-size:22px;margin-bottom:12px}
+@media(max-width:650px){header{width:calc(100% - 30px)}nav{width:calc(100% - 30px);gap:12px 15px}.hero{min-height:590px;padding:75px 20px}.music-card{flex-direction:column;align-items:flex-start}.music-actions{width:100%;align-items:flex-start}.music-actions .button{width:100%}.cards-grid,.promise-list,.wish-grid{grid-template-columns:1fr}.section{padding:62px 0}.letter-section{padding:62px 0 75px}.paper-date{font-size:8px}.final-section{padding:85px 20px 95px}.reveal-card summary{min-height:unset}}
+</style>
+</head>
+<body>
+<div class="stars" aria-hidden="true"></div>
+<div class="page">
+<header>
+  <div class="logo">N <span style="color:#e5b7c4">♡</span></div>
+  <div class="header-note">Una pequeña historia<br>dedicada a Noelia</div>
+</header>
+<nav aria-label="Navegación principal">
+  <a href="#inicio">Inicio</a><a href="#musica">Nuestra canción</a><a href="#recorrido">El recorrido</a><a href="#detalles">Pequeños detalles</a><a href="#carta">La carta</a><a href="#pregunta-final">La pregunta</a>
+</nav>
+<main>
+<section class="hero" id="inicio">
+  <div class="eyebrow">Hay algo que quiero decirte</div>
+  <h1>Noelia</h1>
+  <div class="ornament">✧</div>
+  <p class="hero-text">No quería hacerte una pregunta tan especial de cualquier manera. Así que preparé este pequeño lugar, lleno de detalles y palabras que quería compartir contigo.</p>
+  <div class="button-row"><a href="#bienvenida" class="button gold">Comenzar este pequeño viaje ♡</a><a href="#musica" class="button">Escuchar la canción ♪</a></div>
+  <div class="scroll-note">Desliza despacio · Hay más por descubrir ↓</div>
+</section>
+
+<section class="section" id="bienvenida">
+  <div class="section-heading"><div class="section-kicker">Antes de continuar</div><h2>Este rincón es para ti</h2></div>
+  <div class="welcome-panel"><div class="big-quote">“</div><p>No es una página cualquiera. Es una forma de dedicarte un poquito de mi tiempo y de enseñarte, con detalles, lo mucho que me ilusiona la idea de tenerte en mi vida de una manera todavía más especial.</p></div>
+</section>
+
+<section class="section" id="musica">
+  <div class="section-heading"><div class="section-kicker">Dale al play</div><h2>Una canción para este momento</h2><p class="section-intro">Quería que la música también formara parte de esta pequeña sorpresa. Puedes escucharla mientras recorres la página.</p></div>
+  <div class="music-card">
+    <div><div class="music-label">Un momento para nosotros</div><div class="music-title">Nuestra canción ♡</div><div class="music-description">Pulsa el botón y el vídeo aparecerá aquí mismo, sin salir de esta página.</div></div>
+    <div class="music-actions"><button class="button gold" id="playMusic" type="button">▶ Mostrar canción</button><a class="youtube-link" href="https://www.youtube.com/watch?v=w-rVk2j7aT4" target="_blank" rel="noopener noreferrer">Abrir en YouTube ↗</a></div>
+  </div>
+  <div id="music-player" hidden></div>
+  <p class="music-help">Cuando aparezca el vídeo, pulsa el botón de reproducción que está dentro del propio reproductor. Algunos navegadores bloquean el sonido automático. Si YouTube no permite insertar este vídeo, utiliza el enlace directo.</p>
+</section>
+
+<section class="section" id="recorrido">
+  <div class="section-heading"><div class="section-kicker">Un pequeño recorrido</div><h2>Lo bonito está en el camino</h2><p class="section-intro">No quiero inventarme recuerdos que todavía no hemos vivido. Prefiero imaginar todas las pequeñas cosas que podríamos compartir.</p></div>
+  <div class="timeline">
+    <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-label">Capítulo primero</div><h3>La ilusión de conocerte</h3><p>Todo empieza con la curiosidad de conocer a alguien. Poco a poco aparecen las conversaciones, las preguntas y las ganas de descubrir cómo es esa persona.</p></div>
+    <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-label">Capítulo segundo</div><h3>Los pequeños momentos</h3><p>Esos detalles que quizá parecen insignificantes: un mensaje inesperado, una conversación divertida o saber que alguien se acuerda de ti.</p></div>
+    <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-label">Capítulo tercero</div><h3>Conocernos de verdad</h3><p>Descubrir nuestros gustos, nuestras ideas, nuestros sueños y también esas pequeñas cosas que nos hacen diferentes. Sin fingir y sin tener que aparentar ser alguien más.</p></div>
+    <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-label">Capítulo cuarto</div><h3>Lo que podría venir</h3><p>No sabemos todo lo que nos espera, pero me ilusiona pensar que podríamos escribir algo bonito entre los dos, a nuestro ritmo y con mucho cariño.</p></div>
+  </div>
+</section>
+
+<section class="section" id="detalles">
+  <div class="section-heading"><div class="section-kicker">Pequeñas cosas</div><h2>Abre cada detalle</h2><p class="section-intro">Hay palabras que merecen su propio espacio. Toca cada tarjeta para descubrir lo que esconde.</p></div>
+  <div class="cards-grid">
+    <details class="reveal-card"><summary><div class="card-number">01</div><h3>Conocerte cada día</h3><div class="card-hint">Toca para descubrir ♡</div></summary><p class="card-extra">Me gustaría descubrir cosas nuevas de ti, incluso después de muchas conversaciones. Siempre habrá algo más que aprender sobre una persona cuando de verdad tienes interés en conocerla.</p></details>
+    <details class="reveal-card"><summary><div class="card-number">02</div><h3>Las conversaciones</h3><div class="card-hint">Toca para descubrir ♡</div></summary><p class="card-extra">Me encantan esos momentos en los que empiezas hablando de una tontería y terminas hablando de mil cosas. Quiero que podamos compartir tanto los temas importantes como las cosas más absurdas.</p></details>
+    <details class="reveal-card"><summary><div class="card-number">03</div><h3>La confianza</h3><div class="card-hint">Toca para descubrir ♡</div></summary><p class="card-extra">Quiero que podamos hablar sin miedo a ser juzgados, escucharnos con paciencia y sentir que no tenemos que esconder nuestra forma de pensar para agradar al otro.</p></details>
+    <details class="reveal-card"><summary><div class="card-number">04</div><h3>Las risas</h3><div class="card-hint">Toca para descubrir ♡</div></summary><p class="card-extra">Ojalá tengamos muchísimos momentos de esos en los que no podemos parar de reír, incluso por algo que no tendría ninguna gracia para el resto del mundo.</p></details>
+    <details class="reveal-card"><summary><div class="card-number">05</div><h3>Apoyarnos</h3><div class="card-hint">Toca para descubrir ♡</div></summary><p class="card-extra">Me gustaría interesarme por tus sueños y tus objetivos, animarte cuando lo necesites y celebrar contigo cada pequeño paso que te acerque a lo que quieres conseguir.</p></details>
+    <details class="reveal-card"><summary><div class="card-number">06</div><h3>Elegirnos libremente</h3><div class="card-hint">Toca para descubrir ♡</div></summary><p class="card-extra">Para mí, lo bonito sería que los dos quisiéramos estar ahí, sin presiones, sin obligaciones y con la libertad de expresar siempre lo que sentimos.</p></details>
+  </div>
+</section>
+
+<section class="section" id="ilusiones">
+  <div class="section-heading"><div class="section-kicker">Si algún día compartimos esta historia</div><h2>Me haría ilusión...</h2></div>
+  <div class="wish-grid">
+    <div class="wish"><div class="wish-icon">☾</div><h3>Hablar sin mirar la hora</h3><p>Que una conversación sencilla se convierta en uno de esos momentos que se pasan volando.</p></div>
+    <div class="wish"><div class="wish-icon">✧</div><h3>Compartir nuestros sueños</h3><p>Contarnos lo que queremos conseguir y animarnos a perseguirlo.</p></div>
+    <div class="wish"><div class="wish-icon">♡</div><h3>Celebrar lo pequeño</h3><p>Encontrar motivos para sonreír incluso en los días más normales.</p></div>
+    <div class="wish"><div class="wish-icon">❀</div><h3>Aprender juntos</h3><p>Conocernos mejor, comprendernos y descubrir nuevas cosas el uno del otro.</p></div>
+    <div class="wish"><div class="wish-icon">∞</div><h3>Cuidar los detalles</h3><p>No dar por sentado el cariño y demostrarlo también con pequeños gestos.</p></div>
+    <div class="wish"><div class="wish-icon">☆</div><h3>Crear recuerdos</h3><p>Guardar momentos que algún día podamos recordar con una sonrisa.</p></div>
+  </div>
+</section>
+
+<section class="section" id="juego">
+  <div class="section-heading"><div class="section-kicker">Un pequeño juego</div><h2>Elige una estrella</h2><p class="section-intro">Cada estrella guarda una frase. No hay respuestas correctas, solo pequeños pensamientos que quería compartir contigo.</p></div>
+  <div class="question-box"><h3>¿Qué te gustaría descubrir primero?</h3><p>Elige la opción que más te llame la atención.</p>
+    <div class="question-options">
+      <button class="choice-button" type="button" data-message="Me gustaría conocer tus sueños, incluso los que todavía no te has atrevido a contar. ✧">Tus sueños</button>
+      <button class="choice-button" type="button" data-message="Quiero descubrir las pequeñas cosas que te hacen feliz y que quizá los demás ni siquiera notan. ♡">Lo que te hace feliz</button>
+      <button class="choice-button" type="button" data-message="Quiero conocer tu forma de ver el mundo, tus ideas y todo eso que te hace ser tú. ☆">Tu manera de pensar</button>
+    </div>
+    <div id="choice-result" aria-live="polite"></div>
+  </div>
+</section>
+
+<section class="letter-section" id="carta">
+  <div class="section-heading"><div class="section-kicker">De mí para ti</div><h2>Unas palabras sinceras</h2></div>
+  <article class="paper"><div class="paper-content">
+    <div class="paper-date">Escrito especialmente para Noelia</div>
+    <div class="greeting">Querida Noelia...</div>
+    <p>No sabía muy bien cómo empezar esta carta. He pensado varias veces en qué decirte y cómo hacerlo, porque no quería que fuese una declaración cualquiera. Quería dedicarte un momento, unas palabras y un pequeño detalle que te hiciera sentir lo especial que eres para mí.</p>
+    <p>Desde que llegaste, poco a poco has conseguido despertar en mí una ilusión muy bonita. Me gusta hablar contigo, saber cómo te ha ido el día, escuchar tus historias y compartir incluso las conversaciones más sencillas. Es curioso cómo algo tan pequeño como recibir un mensaje puede conseguir que un día normal se vuelva un poquito más bonito.</p>
+    <p>Hay muchas cosas de ti que todavía quiero descubrir. Quiero conocer tus gustos, tus sueños, tus pensamientos, tus pequeñas manías y todas esas cosas que forman parte de tu manera de ser. Quiero saber qué te hace feliz, qué te emociona y qué cosas guardas en tu corazón. No quiero conocer solamente una parte de ti; me gustaría descubrirte poco a poco, de verdad.</p>
+    <p>No quiero que pienses que tienes que ser perfecta conmigo. No tienes que aparentar estar siempre feliz, tener siempre las palabras adecuadas ni esconder tus días difíciles. Todos tenemos nuestras propias formas de pensar, nuestros defectos y nuestras inseguridades. Y precisamente por eso quiero que puedas sentirte libre de ser tú misma cuando estés conmigo.</p>
+    <p>Me gustaría ser alguien con quien puedas hablar tranquilamente, alguien que te escuche sin juzgarte y que tenga interés por saber cómo estás de verdad. Alguien que no solamente aparezca cuando todo va bien, sino que también sepa tener paciencia cuando las cosas se compliquen.</p>
+    <p>No voy a prometerte una historia perfecta, porque sé que esas cosas no existen. Habrá días buenos, días normales y quizá algún momento en el que no pensemos igual. Pero creo que lo bonito de querer a alguien también está en aprender a entenderse, hablar con sinceridad, respetarse y cuidar lo que se tiene.</p>
+    <p>No quiero que una relación sea una obligación ni que ninguno de los dos tenga que dejar de ser quien es. Me gustaría que fuese algo que nos hiciera bien, que nos diera tranquilidad y que nos permitiera crecer juntos sin perder nuestra propia esencia.</p>
+    <p>Quiero compartir contigo momentos que quizá parezcan pequeños, pero que con el tiempo se conviertan en recuerdos importantes. Reírnos por cualquier tontería, contarnos cómo nos ha ido, apoyarnos en nuestros objetivos, hablar de nuestros sueños y disfrutar de la compañía del otro incluso cuando no haya nada extraordinario que hacer.</p>
+    <p>Porque para mí no se trata solamente de decir cosas bonitas. Se trata de demostrar con detalles que una persona importa. Se trata de prestar atención, recordar lo que te gusta, respetar tus tiempos, cuidar las palabras y tener ganas de seguir conociéndote cada día un poquito más.</p>
+    <p>Quiero que sepas que lo que siento no nace de querer tener a alguien a mi lado por tenerlo. Nace de la ilusión que me hace conocerte y de las ganas que tengo de descubrir qué podríamos construir juntos. No quiero adelantarme a todo lo que pueda pasar; prefiero disfrutar cada paso y dejar que las cosas sean sinceras.</p>
+    <p>Puede que esta carta no tenga las palabras más perfectas del mundo, pero sí tiene algo que para mí vale mucho más: <strong>está escrita con toda la sinceridad que puedo ofrecerte.</strong> No quería copiar una declaración cualquiera ni limitarme a decirte dos frases bonitas. Quería que supieras que me he tomado el tiempo de preparar esto porque de verdad me importas.</p>
+    <p>Me ilusiona imaginar todos esos pequeños momentos que podríamos vivir. Las conversaciones interminables, las risas inesperadas, los mensajes que llegan justo cuando hacen falta y los recuerdos que algún día podremos mirar atrás y recordar con una sonrisa.</p>
+    <p>Noelia, me gustas. Me gusta lo que estoy descubriendo de ti y me gustaría tener la oportunidad de seguir conociéndote de una forma todavía más especial. No te pido que seas alguien diferente ni que tengas una respuesta por compromiso. Quiero que seas sincera conmigo, porque lo que tú sientes también es importante.</p>
+    <p>Y si los dos sentimos lo mismo, me encantaría que pudiéramos empezar algo bonito. Algo nuestro, sin comparaciones, sin expectativas imposibles y sin prisas. Una historia que no tenga que ser perfecta para ser especial, porque lo importante sería que los dos eligiéramos cuidarla.</p>
+    <p>Gracias por estar aquí leyendo todo esto. Gracias por cada conversación y por cada pequeño momento que me ha hecho sonreír. No sé exactamente qué nos espera, pero sí sé que me haría mucha ilusión descubrirlo contigo.</p>
+    <p>Y después de escribirte tanto, creo que ya ha llegado el momento de hacerte la pregunta que realmente quería hacerte desde el principio...</p>
+    <p><strong>Noelia, ¿me dejarías compartir contigo esta pequeña aventura?</strong></p>
+    <div class="signature">Con mucho cariño, para ti. ♡</div>
+  </div></article>
+</section>
+
+<section class="section" id="despues-carta"><div class="after-letter"><div class="quote">“</div><p>A veces no hacen falta grandes acontecimientos para que alguien se vuelva especial. A veces basta con conocer a una persona, descubrir su manera de ser y sentir que te gustaría seguir compartiendo momentos con ella.</p><div class="ornament">♡</div></div></section>
+
+<section class="section" id="promesas">
+  <div class="section-heading"><div class="section-kicker">No quiero prometer perfección</div><h2>Quiero cuidar estas cosas</h2><p class="section-intro">Para mí, una relación bonita no se construye solo con palabras. También se construye con pequeños gestos y decisiones.</p></div>
+  <div class="promise-list">
+    <div class="promise"><h3>Escucharte</h3><p>Prestar atención a lo que piensas y sientes, sin hacerte sentir que tus palabras no importan.</p></div>
+    <div class="promise"><h3>Respetarte</h3><p>Entender que tienes tus propios tiempos, tus opiniones y tu espacio personal.</p></div>
+    <div class="promise"><h3>Hablar contigo</h3><p>Intentar resolver los desacuerdos hablando con calma y sin convertirlos en una competición.</p></div>
+    <div class="promise"><h3>Ser sincero</h3><p>Decirte lo que siento con honestidad y demostrarlo también con mis acciones.</p></div>
+    <div class="promise"><h3>Apoyarte</h3><p>Interesarme por tus metas y alegrarme de tus logros, sean grandes o pequeños.</p></div>
+    <div class="promise"><h3>Disfrutar contigo</h3><p>Recordar que una relación también debe tener alegría, tranquilidad y momentos divertidos.</p></div>
+  </div>
+</section>
+
+<section class="section" id="ultimo-mensaje"><div class="section-heading"><div class="section-kicker">Antes de llegar al final</div><h2>Quiero que recuerdes algo</h2></div><div class="welcome-panel"><div class="big-quote">♡</div><p>No tienes que responder lo que creas que quiero escuchar. No tienes que sentirte obligada a nada. Me gustaría que esta página te sacara una sonrisa y que, cuando llegues a la última pregunta, puedas responder con total libertad.</p></div></section>
+
+<section class="final-section" id="pregunta-final">
+  <div class="final-overline">Y ahora sí, Noelia...</div>
+  <h2>¿Quieres ser mi novia?</h2>
+  <p class="final-text">Me haría muchísima ilusión poder empezar esta historia contigo. No quiero una respuesta por compromiso, solo quiero saber qué siente tu corazón.</p>
+  <div class="answer-buttons"><button class="button gold" id="yesButton" type="button">Sí, quiero ♡</button><button class="button" id="thinkButton" type="button">Estoy pensándolo</button></div>
+  <div id="answer" role="status" aria-live="polite"></div>
+</section>
+</main>
+<footer><span class="footer-heart">♡</span>Hecho con cariño · Para Noelia</footer>
+</div>
+
+<script>
+(function () {
+  'use strict';
+
+  // MÚSICA: el vídeo aparece dentro de la página al tocar el botón.
+  const playMusicButton = document.getElementById('playMusic');
+  const musicPlayer = document.getElementById('music-player');
+  let musicLoaded = false;
+
+  playMusicButton.addEventListener('click', function () {
+    if (!musicLoaded) {
+      const iframe = document.createElement('iframe');
+      iframe.src = 'https://www.youtube.com/embed/w-rVk2j7aT4?autoplay=1&playsinline=1&controls=1&rel=0';
+      iframe.title = 'Canción para Noelia';
+      iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+      iframe.referrerPolicy = 'strict-origin-when-cross-origin';
+      iframe.setAttribute('allowfullscreen', '');
+      musicPlayer.appendChild(iframe);
+      musicPlayer.hidden = false;
+      musicLoaded = true;
+      playMusicButton.textContent = '♪ Ocultar reproductor';
+      musicPlayer.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    } else {
+      musicPlayer.hidden = !musicPlayer.hidden;
+      playMusicButton.textContent = musicPlayer.hidden ? '▶ Mostrar canción' : '♪ Ocultar reproductor';
+      if (!musicPlayer.hidden) {
+        musicPlayer.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    }
+  });
+
+  // TARJETAS: usan el elemento nativo <details>, no necesitan JavaScript para abrirse.
+  // JUEGO DE LAS ESTRELLAS.
+  const choiceResult = document.getElementById('choice-result');
+  document.querySelectorAll('.choice-button').forEach(function (button) {
+    button.addEventListener('click', function () {
+      choiceResult.textContent = button.getAttribute('data-message');
+      document.querySelectorAll('.choice-button').forEach(function (other) {
+        other.classList.remove('selected');
+      });
+      button.classList.add('selected');
+    });
+  });
+
+  // RESPUESTAS FINALES.
+  const answerBox = document.getElementById('answer');
+  document.getElementById('yesButton').addEventListener('click', function () {
+    answerBox.textContent = 'No sabes la ilusión que me hace tu respuesta, Noelia. Gracias por darme la oportunidad de empezar algo bonito contigo. Quiero que lo construyamos juntos, con sinceridad, paciencia, respeto y muchísimo cariño. ♡';
+    answerBox.style.display = 'block';
+    answerBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  });
+
+  document.getElementById('thinkButton').addEventListener('click', function () {
+    answerBox.textContent = 'Está bien, Noelia. Tómate todo el tiempo que necesites. No quiero que sientas ninguna presión. Para mí lo importante es que puedas responder con sinceridad y que estés cómoda con lo que decidas. Gracias por leer mi página y dedicarle tu tiempo. ♡';
+    answerBox.style.display = 'block';
+    answerBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  });
+})();
+</script>
+</body>
+</html>
